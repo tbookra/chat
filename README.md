@@ -1,4 +1,7 @@
+clone the server repo https://github.com/tbookra/chat_server
+run on the project terminal "npm run start"
 
+clone the front project from https://github.com/tbookra/chat, on a different location.
 
 run `npm start` on the terminal
 
