@@ -2,7 +2,7 @@ import { Message } from '../types/generalTypes'
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-// import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
+import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 
 interface Props {
     message: Message
@@ -32,6 +32,8 @@ const MessageComp = ({message}:Props) => {
         <Typography gutterBottom variant="caption" sx={{fontSize: 6 }}>
           {message.timestamp}
         </Typography>
+        <CheckTwoToneIcon style={{ fontSize: 12, color: message.watched ? '#075E54' : "#bcbcbc", marginLeft:"5px" }} />
+        <CheckTwoToneIcon style={{ fontSize: 12, color: message.watched ? '#075E54' : "#bcbcbc", marginLeft:"-5px" }} />
       </CardContent>
       
     </Card>

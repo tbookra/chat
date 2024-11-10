@@ -7,5 +7,6 @@ export type Message = {
     text:string;
     textId: string;
     timestamp: string;
-    sender: "guest" | "host"
+    sender: "guest" | "host";
+    watched: boolean
 }

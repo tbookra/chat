@@ -17,7 +17,8 @@ const messagesSlice = createSlice({
         text: action.payload.message,
         textId: makeId(8),
         timestamp: setDate(),
-        sender: action.payload.sender
+        sender: action.payload.sender,
+        watched:true
       };
       if (!state[action.payload.room]) {
         state[action.payload.room] = [messageObj];
