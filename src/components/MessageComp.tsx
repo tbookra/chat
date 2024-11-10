@@ -2,7 +2,7 @@ import { Message } from '../types/generalTypes'
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
+// import CheckTwoToneIcon from '@mui/icons-material/CheckTwoTone';
 
 interface Props {
     message: Message
