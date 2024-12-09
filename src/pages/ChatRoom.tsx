@@ -6,6 +6,7 @@ import { setMessages } from "../features/messagesSlice";
 import { Message } from "../types/generalTypes";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { Socket } from "socket.io-client";
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface Props {
   socket: Socket | null;
@@ -53,9 +54,18 @@ export default function ChatRoom({ socket }: Props) {
     <div className="container">
       <Typography variant="h4">{room ? `Room ${room}` : null}</Typography>
       <div ref={containerRef} className="messagesContainer">
+        <AnimatePresence>
         {messages[room]?.map((message: Message) => (
-          <MessageComp key={message.textId} message={message} />
+          <motion.div
+          key={message.textId}
+           initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 50 }}
+          transition={{ duration: 0.3, delay: 0 }}>
+          <MessageComp  message={message} />
+          </motion.div>
         ))}
+        </AnimatePresence>
       </div>
 
       {showRoom && (
